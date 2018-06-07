@@ -1,0 +1,25 @@
+<hr>
+<h4>Username Component</h4>
+<button [disabled]="userNameNotPresent" (click)="setUserNameOnClick()" class="btn btn-primary">Update Username</button><br>
+<input class="form-control" (input)="setUsername($event)" [(ngModel)]="userName" type="text">
+
+<p *ngIf="selectedUserName.length > 0; else noServer ">The username is: {{selectedUserName}}</p>
+
+<ng-template #noServer>
+
+sdfasdfadsfadsfadsfadsf
+</ng-template>
+
+<hr>
+<p [ngStyle]="{backgroundColor: getColor()}">{{serverStatus}}</p>
+
+<hr>
+<h1>Assignment</h1>
+<button class="btn btn-primary" (click)="toggleShowText()">Display Details</button>
+<p *ngIf="displayParagraph">This is my paragraph</p>
+
+<ul>
+<li *ngFor="let item of logTimes; let i = index" [ngStyle]="{backgroundColor: i > 4 ? 'red' : '' }">{{i}} {{item}}</li>
+
+</ul>
+
